@@ -1,9 +1,11 @@
 import React from 'react'
+import { homeObjThree } from './DizajnData'
+import Section from './Section'
 
 const Dizajn = () => {
     return (
         <div>
-            <h1>dizajn</h1>
+            <Section {...homeObjThree } />
         </div>
     )
 }
