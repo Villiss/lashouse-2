@@ -38,15 +38,15 @@ function Kontakt() {
       const Section = styled.section`
         color: #fff;
         padding: 160px 0;
-        background-color: #000;
+        background-color: #1F1F1F;
     `
 
     const KontaktRow = styled.div`
         align-items: center;
         display: flex;
-        margin-right: -15px;
-        margin-bottom: -15px;
-        margin-left: -15px;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        margin-left: 15px;
         flex-wrap: wrap;
         align-content: stretch;
     `

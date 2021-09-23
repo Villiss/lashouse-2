@@ -24,7 +24,7 @@ function App() {
       <Hero slides={SliderData}/>
       <Technologia {...InfoData} />
       <Dizajn/>
-      <Kontakt/>
+      {/* <Kontakt/> */}
       <Footer/>
     </>
   );

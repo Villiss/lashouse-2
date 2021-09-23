@@ -6,6 +6,7 @@ const Section = styled.section`
     width: 100%;
     height: 100%;
     padding: 4rem 0rem;
+    background-color: #1F1F1F;
 `
 
 const Container = styled.div`
@@ -19,26 +20,29 @@ const Container = styled.div`
     }
 `
 
-const ColumnLeft = styled.div`
+const ColumnRight = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     line-height: 1.4;
     padding: 1rem 2rem;
+    margin: 2rem;
     order: ${({ reverse }) => ( reverse ? '2' : '1' )};
 
     h1 {
         margin-bottom: 1rem;
-        font-size: clamp(1.5rem, 6vw, 2rem)
+        font-size: clamp(1.5rem, 6vw, 2rem);
+        color: #fff;
     }
 
     p{
         margin-bottom: 2rem;
+        color: #fff;
     }
 `
 
-const ColumnRight = styled.div`
+const ColumnLeft = styled.div`
     padding: 1rem 2rem;
     order: ${({ reverse }) => ( reverse ? '1' : '2' )};
     display: flex;
@@ -68,13 +72,12 @@ const Technologia = ({heading, paragraphOne, paragraphTwo, buttonLabel, reverse,
         <Section id='technologia'>
             <Container>
                 <ColumnLeft>
-                    <h1>{heading}</h1>
-                    <p>{paragraphOne}</p>
-                    <p>{paragraphTwo}</p>
-                    <Button to='/technologia' primary='true'>{buttonLabel}</Button>
+                <img src={image} alt='dom'/>
+                    
                 </ColumnLeft>
                 <ColumnRight reverse={reverse}>
-                <img src={image} alt='dom'/>
+                <h1>{heading}</h1>
+                    <p>{paragraphOne}</p>
                 </ColumnRight>
             </Container>
         </Section>

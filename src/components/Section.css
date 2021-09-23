@@ -1,6 +1,6 @@
 .home__section {
-  color: rgb(187, 187, 187);
-  padding: 160px 0;
+  color: #e5e5e5;
+  padding: 160px;
 }
 
 .home__row {
@@ -43,6 +43,7 @@
 
 .heading {
   margin-bottom: 24px;
+
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
@@ -50,7 +51,7 @@
 }
 
 .dark {
-  color: #ff6600;
+  color: #000;
 }
 
 .darkBg {
