@@ -10,16 +10,11 @@ function Section({ lightBg, topLine, lightText, lightTextDesc, headline, descrip
             <div className='home__section'>
                 <div className="container">
                     <div className="row home__row" style={{display:'flex', flexDirection: imgStart === 'start' ? 'row-reverse' : 'row'}}>
+                        
                         <div className="col">
                             <div className="home__text-wrapper">
-                                <div className="top-line">
-                                    {topLine}
-                                </div>
                                 <h1 className={lightText ? 'heading' : 'heading dark'}>{headline}</h1>
                                 <p className={lightTextDesc ? 'home__subtitle' : 'home__subtitle dark'}>{description}</p>
-                                <Link to='/kontakt'>
-                                    <Button buttonSize='btn--wide' buttonColor='blue'>{buttonLabel}</Button>
-                                </Link>
                             </div>
                         </div>
                         <div className="col">
