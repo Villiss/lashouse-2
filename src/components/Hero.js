@@ -68,9 +68,9 @@ const HeroContent = styled.div`
     position: relative;
     z-index: 10;
     display: flex;
+    text-align: center;
     flex-direction: column;
-    max-width: 1600px;
-    width: calc(100% - 100px);
+    width: calc(100% - 300px);
     color: #fff;
     padding: 20px;
     border: 3px solid #f1f1f1;
@@ -186,15 +186,12 @@ const Hero = ({slides}) => {
                                 <HeroContent>
                                     <h1>{slide.title}</h1>
                                     <p>{slide.desc}</p>
-                                    <Button 
+                                    {/* <Button 
                                     to={slide.path} 
-                                    primary="true" 
-                                    css={`
-                                    max-width: 160px;
-                                    `}>
+                                    primary="true" >
                                         {slide.label}
                                         <Arrow />
-                                    </Button>
+                                    </Button> */}
                                 </HeroContent>                            
                             </HeroSlider>
                             )}
