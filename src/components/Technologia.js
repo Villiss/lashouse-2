@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button } from './Button'
 
 const Section = styled.section`
     width: 100%;
@@ -28,6 +27,7 @@ const ColumnRight = styled.div`
     line-height: 1.4;
     padding: 1rem 2rem;
     margin: 2rem;
+    border-left: 6px solid #ff6600;
     order: ${({ reverse }) => ( reverse ? '2' : '1' )};
 
     h1 {
@@ -40,44 +40,65 @@ const ColumnRight = styled.div`
         margin-bottom: 2rem;
         color: #fff;
     }
+
+    @media screen and (max-width: 768px){
+        border-left: none;
+        border-top: 6px solid #ff6600;
+    }
 `
 
 const ColumnLeft = styled.div`
-    padding: 1rem 2rem;
+    padding: 2rem;
     order: ${({ reverse }) => ( reverse ? '1' : '2' )};
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 2rem;
+
+    h2 {
+        color: #fff;
+        margin: 2rem;
+    }
+
+    li {
+        margin: 1rem auto;
+    }
 
     @media screen and (max-width: 768px) {
         order: ${({ reverse }) => ( reverse ? '2' : '1' )};
     }
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 200px;
-
-        @media screen and (max-width: 768px){
-            width: 90%;
-            height: 90%;
-        }
-    }
 `
 
 
-const Technologia = ({heading, paragraphOne, paragraphTwo, buttonLabel, reverse, image}) => {
+
+const Technologia = ({heading, paragraphOne, reverse}) => {
     return (
         <Section id='technologia'>
             <Container>
                 <ColumnLeft>
-                <img src={image} alt='dom'/>
+
+                                    <ol className='customlist'>
+                                    <h2>Skladba steny ktorú požívame</h2>
+
+                                    <li>Sádrovláknitá doska hrúbka 12,5 mm ( FERMACELL )</li>
+                                    <li>Paropriepustná fólia ( JUTAFOL )</li>
+                                    <li>Nosná konštrukcia – pozinkovaná oceľ hrúbka 120 mm ( LINDAB )</li>
+                                    <li>Akustická minerálna vlna hrúbka 160 mm ( KNAUF Decibel TI140)</li>
+                                    <li>Sádrovláknitá doska hrúbka 12,5 mm ( FERMACELL )</li>
+                                    <li>Difúzna fólia Lindab Contact Foil 95</li>
+                                    <li>Fasádna minerálna vlna hrúbka 100 mm ( KNAUF FKD-S )</li>
+                                    <li>Sklotextilná mriežka OMFA / VERTEX 145g</li>
+                                    <li>Silikónová omietka BAUMIT AT, PROHET</li>
+                                    </ol>
+                            {/* <div className="home__img-wrapper">
+                                <img src='../../../images/tech.jpg' alt='Alt' className="home__img" />
+                            </div> */}
                     
                 </ColumnLeft>
                 <ColumnRight reverse={reverse}>
                 <h1>{heading}</h1>
                     <p>{paragraphOne}</p>
+                    <img src='images/logo_lindab.png'/>
                 </ColumnRight>
             </Container>
         </Section>

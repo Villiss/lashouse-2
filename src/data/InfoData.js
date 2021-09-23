@@ -1,5 +1,3 @@
-import ImageOne from '../images/house.jpg'
-import ImageTwo from '../images/house2.jpg'
 
 export const InfoData = {
     heading: 'Technológia',
@@ -7,7 +5,6 @@ export const InfoData = {
     Táto technológia nám umožňuje stavať rýchlo, jednoducho a v akýchkoľvek poveternostných podmienkach. Montovaná technológia využíva ľahkú oceľovú nosnú konštrukciu s výplňou minerálnej tepelnej izolácie.
     Ako plášť na fasádu a interér sú za podklad zvolené sádrovlaknité dosky s doplňujúcimi fóliami. Pre naplnenie nízkoenergetického štandardu pridávame z exteriérovej strany ďalšiu tepelnú izoláciu ochránenú kvalitnou silikónovou omietkou.`,
     buttonLabel: 'View Homes',
-    image: ImageOne,
     reverse: true,
     delay: 100
 };
