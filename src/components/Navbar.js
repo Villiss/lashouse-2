@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { menuData } from '../data/MenuData'
 import { Button } from './Button'
 import { FaBars } from 'react-icons/fa'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const Nav = styled.nav`
     height: 60px;

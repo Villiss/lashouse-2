@@ -1,32 +1,29 @@
 import React, {useState} from "react";
 import Dropdown from "./components/Dropdown";
-import Hero from "./components/Hero";
-import Technologia from "./components/Technologia";
 import Navbar from "./components/Navbar";
-import { InfoData, InfoDataTwo } from "./data/InfoData";
-import { SliderData } from "./data/SliderData";
 import GlobalStyle from "./globalStyle";
 import Kontakt from "./components/Kontakt";
-import Dizajn from "./components/Dizajn";
 import Footer from "./components/Footer";
-
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import HomePage from "./components/HomePage";
 function App() {
+  document.title = 'LASHOUSE'
   const [isOpen, setIsOpen] = useState(false)
 
   const toggle = () => {
     setIsOpen(!isOpen)
   }
   return (
-    <>
-    <GlobalStyle/>
+    <Router>
+      <GlobalStyle/>
       <Navbar toggle={toggle}/>
       <Dropdown isOpen={isOpen} toggle={toggle}/>
-      <Hero slides={SliderData}/>
-      <Technologia {...InfoData} />
-      <Dizajn/>
-      {/* <Kontakt/> */}
+      <Switch>
+        <Route path='/' exact component={HomePage} />
+        <Route path='/kontakt' component={Kontakt} />
+      </Switch>
       <Footer/>
-    </>
+    </Router>
   );
 }
 
