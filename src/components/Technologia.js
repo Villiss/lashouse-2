@@ -89,6 +89,7 @@ const ColumnLeft = styled.div`
 
         &:hover {
             background: #eee;
+            color: #000;
             cursor: pointer;
         }
         &:before {
@@ -138,7 +139,7 @@ const VerticalLine = styled.hr`
 
 const Technologia = ({heading, paragraphOne, reverse}) => {
     return (
-        <Section id='/technologia'>
+        <Section name='/technologia'>
             <Container>
             <h1>{heading}</h1>
                 <ColumnLeft>

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, {css} from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-scroll'
 import { menuData } from '../data/MenuData'
 import { Button } from './Button'
 import { FaBars } from 'react-icons/fa'
