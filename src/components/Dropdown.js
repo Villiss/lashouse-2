@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-scroll'
 import styled from 'styled-components'
 import { menuData } from '../data/MenuData'
 import { Button } from './Button'
@@ -71,6 +71,11 @@ const BtnWrap = styled.div`
     justify-content: center;
 `
 
+const Logo = styled(Link)`
+    ${DropdownLink}
+    font-style: italic;
+`
+
 const Dropdown = ({isOpen, toggle}) => {
     return (
         <DropdownContainer isOpen={isOpen} onClick={toggle} >
@@ -79,8 +84,9 @@ const Dropdown = ({isOpen, toggle}) => {
             </Icon>
             <DropdownWrapper>
                 <DropdownMenu>
+                <Logo onClick={toggle} to='/'>LASHOUSE</Logo>
                     {menuData.map((item, index) => (
-                        <DropdownLink to={item.link} key={index}>
+                        <DropdownLink to={item.link} key={index} onClick={toggle}>
                             {item.title}
                         </DropdownLink>
                     ))}

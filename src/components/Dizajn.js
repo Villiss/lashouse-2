@@ -76,10 +76,7 @@ const ColumnRight = styled.div`
 
 const Dizajn = ({heading, description, img, alt, reverse}) => {
     return (
-        // <div>
-        //     {/* <Section {...homeObjThree } /> */}
-        // </div>
-        <Section id='dizajn'>
+        <Section name='/dizajn'>
             <Container>
             <h1>{heading}</h1>
                 <ColumnLeft>

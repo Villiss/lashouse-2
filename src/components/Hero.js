@@ -137,7 +137,6 @@ const PrevArrow = styled(IoArrowBack)`
 const NextArrow = styled(IoArrowForward)`
     ${arrowButtons};
 `
-
 const Modal = styled(IoImage)`
     ${arrowButtons};
 `
@@ -188,7 +187,7 @@ const Hero = ({slides}) => {
     }
 
     return (
-        <HeroSection>
+        <HeroSection name='/'>
             <HeroWrapper>
                 {slides.map((slide, index) => {
                     return (
