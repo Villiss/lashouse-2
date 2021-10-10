@@ -2,7 +2,7 @@ import React, {useState, useRef, useEffect} from 'react'
 import styled, { css } from 'styled-components/macro'
 import { Button } from './Button'
 import { IoMdArrowRoundForward } from 'react-icons/io'
-import { IoArrowForward, IoArrowBack } from 'react-icons/io5'
+import { IoArrowForward, IoArrowBack, IoImage } from 'react-icons/io5'
 
 const HeroSection = styled.section`
     height: 100vh;
@@ -61,7 +61,7 @@ const HeroImage = styled.img`
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    filter: blur(5px);
+    filter:  ${props => props.blurry ? 'blur(5px)' : 'blur(0px)'}
 `
 
 const HeroContent = styled.div`
@@ -95,6 +95,8 @@ const HeroContent = styled.div`
         h1, p{
             text-align: center;
         }
+
+        width: auto;
     }
 `
 
@@ -136,11 +138,17 @@ const NextArrow = styled(IoArrowForward)`
     ${arrowButtons};
 `
 
+const Modal = styled(IoImage)`
+    ${arrowButtons};
+`
+
 const Hero = ({slides}) => {
 
     const [current, setCurrent] = useState(0)
     const length = slides.length
     const timeout = useRef(null)
+    const [display, setDisplay] = useState('block')
+    const [blureffect, setBlureffect] = useState(true)
 
     useEffect(() => {
         const nextSlide = () => {
@@ -170,6 +178,11 @@ const Hero = ({slides}) => {
         setCurrent(current === 0 ? length - 1 : current - 1)
     }
 
+    const seeGallery = () => {
+       setDisplay(display === 'block' ? 'none' : 'block')
+       setBlureffect(blureffect ? false : true)
+    }
+
     if(!Array.isArray(slides) || slides.length <= 0) {
         return null
     }
@@ -182,8 +195,8 @@ const Hero = ({slides}) => {
                         <HeroSlide key={index}>
                             {index === current && (
                                 <HeroSlider>
-                                <HeroImage src={slide.image} alt={slide.alt}/>
-                                <HeroContent>
+                                <HeroImage blurry={blureffect} src={slide.image} alt={slide.alt}/>
+                                <HeroContent style={{display: `${display}`}}>
                                     <h1>{slide.title}</h1>
                                     <p>{slide.desc}</p>
                                     {/* <Button 
@@ -200,6 +213,7 @@ const Hero = ({slides}) => {
                     )
                 })}
                 <SliderButtons>
+                    <Modal onClick={seeGallery}/>
                     <PrevArrow onClick={prevSlide}/>
                     <NextArrow onClick={nextSlide}/>
                 </SliderButtons>
