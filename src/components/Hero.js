@@ -61,7 +61,8 @@ const HeroImage = styled.img`
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    filter:  ${props => props.blurry ? 'blur(5px)' : 'blur(0px)'}
+    filter:  ${props => props.blurry ? 'blur(5px)' : 'blur(0px)'};
+    transition: 0.5s ease-in-out;
 `
 
 const HeroContent = styled.div`
@@ -98,10 +99,6 @@ const HeroContent = styled.div`
 
         width: auto;
     }
-`
-
-const Arrow = styled(IoMdArrowRoundForward)`
-    margin-left: 0.5rem;
 `
 
 const SliderButtons = styled.div`
