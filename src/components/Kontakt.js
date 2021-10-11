@@ -165,7 +165,7 @@ function Kontakt() {
 
     return (
         <div>
-            <Section>
+            <Section name='/kontakt'>
                 <div style={{paddingRight: '30px', paddingLeft: '30px'}}>
                     <KontaktRow>
                         <KontaktCol>
