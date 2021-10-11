@@ -74,6 +74,8 @@ const BtnWrap = styled.div`
 const Logo = styled(Link)`
     ${DropdownLink}
     font-style: italic;
+    cursor: pointer;
+    font-size: 1.5rem;
 `
 
 const Dropdown = ({isOpen, toggle}) => {
@@ -84,15 +86,15 @@ const Dropdown = ({isOpen, toggle}) => {
             </Icon>
             <DropdownWrapper>
                 <DropdownMenu>
-                <Logo onClick={toggle} to='/'>LASHOUSE</Logo>
+                <Logo smooth onClick={toggle} to='/'>LASHOUSE</Logo>
                     {menuData.map((item, index) => (
-                        <DropdownLink to={item.link} key={index} onClick={toggle}>
+                        <DropdownLink smooth to={item.link} key={index} onClick={toggle}>
                             {item.title}
                         </DropdownLink>
                     ))}
                 </DropdownMenu>
                 <BtnWrap>
-                    <Button primary='true' round='true' big='true' to='/kontakt'>
+                    <Button smooth onClick={toggle} primary='true' round='true' big='true' to='/kontakt'>
                         Kontakt
                     </Button>
                 </BtnWrap>

@@ -85,17 +85,17 @@ const NavBtn = styled.div`
 const Navbar = ({toggle}) => {
     return (
         <Nav>
-            <Logo to='/'>LASHOUSE</Logo>
+            <Logo smooth to='/'>LASHOUSE</Logo>
             <MenuBars onClick={toggle} />
             <NavMenu>
                 {menuData.map((item, index)=> (
-                    <NavMenuLinks to={item.link} key={index}>
+                    <NavMenuLinks smooth to={item.link} key={index}>
                         {item.title}
                     </NavMenuLinks>
                 ))}
             </NavMenu>
             <NavBtn>
-                <Button to='/kontakt' primary='true'>Kontakt</Button>
+                <Button smooth to='/kontakt' primary='true'>Kontakt</Button>
             </NavBtn>
         </Nav>
     )
